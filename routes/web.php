@@ -23,6 +23,6 @@ Route::get('admin/dashboard', function () {
 });
 
 
-Route::get('admin/admin', function () {
+Route::get('admin/admin/lista', function () {
     return view('admin.admin.lista');
 });
