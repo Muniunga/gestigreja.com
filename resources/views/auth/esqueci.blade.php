@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GestIgreja| Log in</title>
+  <title>Recuperar Password</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,13 +19,13 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="" class="h1"><b>Gest</b>Igreja</a>
+      <a href="" class="h1"><b>Recuperar Password</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Bem Vindo</p>
+
 
       @include('_mensagem')
-      <form action="{{url('login') }}" method="post">
+      <form action="" method="post">
         {{ csrf_field( )}}
         <div class="input-group mb-3">
           <input type="email" class="form-control" required name="email" placeholder="Email">
@@ -35,26 +35,11 @@
             </div>
           </div>
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Palavra-passe">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" name="lebrar" id="remember">
-              <label for="remember">
-                Lembrar-me
-              </label>
-            </div>
-          </div>
+
+
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+            <button type="submit" class="btn btn-primary btn-block">Esqueci</button>
           </div>
           <!-- /.col -->
         </div>
@@ -64,7 +49,8 @@
       <!-- /.social-auth-links -->
 
       <p class="mb-1">
-        <a href="{{url('esqueci-password') }}">Esqueceu a Palavra-Passe?</a>
+        <br/>
+        <a href="{{url('') }}">Login</a>
       </p>
 
     </div>

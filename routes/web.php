@@ -22,6 +22,9 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [AuthController::class, 'login']);
 Route::post('login', [AuthController::class, 'AuthLogin']);
 Route::get('logout', [AuthController::class, 'logout']);
+Route::get('esqueci-password', [AuthController::class, 'esquecipassword']);
+Route::post('esqueci-password', [AuthController::class, 'PostEsqueciPassword']);
+
 
 Route::get('admin/dashboard', function () {
     return view('admin.dashboard');
