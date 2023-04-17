@@ -176,6 +176,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{url('logout') }}" class="nav-link">
+               <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <p>
+                sair
+              </p>
+            </a>
+          </li>
           
         
 
