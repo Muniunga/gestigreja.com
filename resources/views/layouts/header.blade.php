@@ -107,8 +107,8 @@
 
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <span class="brand-text font-weight-light">GestIgreja</span>
+    <a href="javascript:;" class="brand-link" style="text-align: center;">
+      <span class="brand-text font-weight-light" style="font-weight: bold !important; font-size:20px;">GestIgreja</span>
     </a>
 
     <!-- Sidebar -->
@@ -129,19 +129,20 @@
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
+            @if(Auth::user()->user_type==1)
           <li class="nav-item">
-            <a href="{{url('admin/dashboard') }}" class="nav-link">
+            <a href="{{url('admin/dashboard') }}" class="nav-link  @if(Request::segment(2) =='dashboard') active @endif">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                Dashboard {{ Request::segment(1) }}
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('admin/admin/lista') }}" class="nav-link">
+            <a href="{{url('admin/admin/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
               <i class="nav-icon far fa-user"></i>
               <p>
-                Pastores
+                Lista
               </p>
             </a>
           </li>
@@ -154,8 +155,59 @@
             </a>
           </li>
 
+          @elseif(Auth::user()->user_type==2)
+          <li class="nav-item">
+            <a href="{{url('secretario/dashboard') }}" class="nav-link  @if(Request::segment(2) =='dashboard') active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard {{ Request::segment(1) }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/admin/lista') }}" class="nav-link @if(Request::segment(2) =='lista') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Listar
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('logout') }}" class="nav-link">
+               <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <p>
+                sair
+              </p>
+            </a>
+          </li>
 
+          @elseif(Auth::user()->user_type==3)
+          <li class="nav-item">
+            <a href="{{url('tesoureiro/dashboard') }}" class="nav-link  @if(Request::segment(2) =='dashboard') active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard {{ Request::segment(1) }}
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('admin/admin/lista') }}" class="nav-link @if(Request::segment(2) =='lista') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Listar
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{url('logout') }}" class="nav-link">
+               <i class="fa fa-sign-out" aria-hidden="true"></i>
+              <p>
+                sair
+              </p>
+            </a>
+          </li>
 
+    @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
