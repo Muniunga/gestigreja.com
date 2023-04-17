@@ -11,7 +11,15 @@ class AuthController extends Controller
     public function login(){
        // dd(Hash::make(123456));
        if (!empty(Auth::check())) {
-        return redirect('admin/dashboard');
+        if (Auth::user()->user_type==1) {
+            return redirect('admin/dashboard');
+        }
+        else if (Auth::user()->user_type==2) {
+            return redirect('secretario/dashboard');
+        }
+        else if (Auth::user()->user_type==3) {
+            return redirect('tesoureiro/dashboard');
+        }
        }
         return view('auth.login');
     }
@@ -20,7 +28,16 @@ class AuthController extends Controller
        // dd($request->all());
         $remember =!empty($request->remember) ? true: false;
        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
-        return redirect('admin/dashboard');
+        if (Auth::user()->user_type==1) {
+            return redirect('admin/dashboard');
+        }
+        else if (Auth::user()->user_type==2) {
+            return redirect('secretario/dashboard');
+        }
+        else if (Auth::user()->user_type==3) {
+            return redirect('tesoureiro/dashboard');
+        }
+
        } else{
         return redirect()->back()->with('error', 'Email ou palavra-passe errada');
        }
@@ -31,5 +48,5 @@ class AuthController extends Controller
         return redirect(url(''));
     }
 
-    
+
 }

@@ -35,3 +35,24 @@ Route::get('admin/admin/lista', function () {
 
 
 
+
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('admin/dashboard', function () {
+        return view('admin.dashboard');
+    });
+});
+
+
+Route::group(['middleware' => 'secretario'], function () {
+    Route::get('secretario/dashboard', function () {
+        return view('admin.dashboard');
+    });
+});
+
+
+Route::group(['middleware' => 'tesoureiro'], function () {
+    Route::get('tesoureiro/dashboard', function () {
+        return view('admin.dashboard');
+    });
+});
