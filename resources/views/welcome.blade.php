@@ -22,7 +22,7 @@
       <a href="" class="h1"><b>Gest</b>Igreja</a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">SBem Vindo</p>
 
       <form action="../../index3.html" method="post">
         <div class="input-group mb-3">
@@ -46,13 +46,13 @@
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
-                Remember Me
+                Lembrar-me
               </label>
             </div>
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" class="btn btn-primary btn-block">Si</button>
           </div>
           <!-- /.col -->
         </div>
