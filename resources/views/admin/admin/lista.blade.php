@@ -26,10 +26,10 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-         
+
           <!-- /.col -->
           <div class="col-md-12">
-            
+
             <!-- /.card -->
 
             <div class="card">
@@ -105,4 +105,4 @@
     <!-- /.content -->
   </div>
 
-@ensection
+@endsection

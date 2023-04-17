@@ -610,4 +610,4 @@
   </div>
 </div>
 
-@ensection
+@endsection
