@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Hash;
 use Auth;
 use App\Models\User;
+use App\Mail\EsqueciPasswordMail;
+use Mail;
+use Str;
 
 class AuthController extends Controller
 {
@@ -50,7 +53,11 @@ class AuthController extends Controller
     {
       $user= User::getEmailSingle($request->email);
       if(!empty($user)){
+        $user->remember_token = Str::random(30);
+        $user->save();
+        Mail::to($user->email)->send(new EsqueciPasswordMail($user));
 
+        return redirect()->with('error', 'Verifica o seu Email');
       }else{
         return redirect()->with('error', 'Email não encontrado no sistema');
       }
