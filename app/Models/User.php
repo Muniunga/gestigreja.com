@@ -42,7 +42,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+   static public function getAdmin(){
+    return self::select('users.*')
+                            ->where('user_type','=',1)
+                            ->orderBy('id', 'desc')
+                            ->get();
+   }
+
     static public function getEmailSingle($email){
         return User::where('email', '=', $email)->first();
     }
+
 }

@@ -4,7 +4,7 @@
 </div>
 @endif
 @if(!empty(session('success')))
-<div class="alert success alert-dismissible-fade-inrole"alert>
+<div class="alert  alert-success"alert>
     {{ session('error') }}
 </div>
 @endif
