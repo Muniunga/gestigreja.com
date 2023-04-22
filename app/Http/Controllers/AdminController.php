@@ -30,4 +30,35 @@ class AdminController extends Controller
       $user->save();
       return redirect('admin/admin/lista')->with('error', "Adicionado com sucesso");
     }
+
+    public function edit($id){
+        $data['getRecord'] = User::getSingle($id);
+        if (!empty($data['geRecord'])) {
+
+            $data['header_title'] = 'editar admin ';
+            return view('admin.admin.edit', $data);
+
+        }else{
+            abort(404);
+        }
+
+    }
+
+    public function update(Request $request, $id){
+
+        $user =  User::getSingle($id);
+        $user->name= trim($request->name);
+        $user->email= trim($request->email);
+        if (!empty($reques->password)) {
+            $user->password= Hash::make($request->password);
+        }
+        $user->save();
+        return redirect('admin/admin/lista')->with('error', "Atualizado com sucesso");
+    }
+    public function delete($id){
+        $user =  User::getSingle($id);
+        $user->is_delete = 1;
+        $user->save();
+        return redirect('admin/admin/lista')->with('error', "Apagado com sucesso");
+    }
 }

@@ -42,10 +42,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    static public function geSingle($id){
+        return self::find($id);
+    }
 
    static public function getAdmin(){
     return self::select('users.*')
                             ->where('user_type','=',1)
+                            ->where('is_delete','=',0)
                             ->orderBy('id', 'desc')
                             ->get();
    }

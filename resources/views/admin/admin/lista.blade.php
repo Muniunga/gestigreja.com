@@ -46,15 +46,21 @@
                       <th>Nome</th>
                       <th>Email</th>
                       <th>Data de criação</th>
+                      <th>Ações</th>
                     </tr>
                   </thead>
                   <tbody>
-                     @foreach ($getRecord as $value)
+                  @foreach ($getRecord as $value)
+
                      <tr>
                         <td>{{ $value->id }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->created_at }}</td>
+                        <td>
+                            <a href="{{ url('admin/admin/edit/'.$value->id)}}" class="btn btn-primary">editar</a>
+                            <a href="{{ url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger">apagar</a>
+                        </td>
                      </tr>
                      @endforeach
                   </tbody>
