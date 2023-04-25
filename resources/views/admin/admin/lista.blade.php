@@ -58,8 +58,8 @@
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->created_at }}</td>
                         <td>
-                            <a href="{{ url('admin/admin/edit/'.$value->id)}}" class="btn btn-primary">editar</a>
-                            <a href="{{ url('admin/admin/delete/'.$value->id)}}" class="btn btn-danger">apagar</a>
+                            <a href="{{ url('admin/admin/edit/'.$value->id) }}" class="btn btn-primary">editar</a>
+                            <a href="{{ url('admin/admin/delete/'.$value->id) }}" class="btn btn-danger">apagar</a>
                         </td>
                      </tr>
                      @endforeach

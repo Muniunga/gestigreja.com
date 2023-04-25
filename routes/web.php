@@ -50,9 +50,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/admin/add',  [AdminController::class, 'insert']);
     Route::get('admin/admin/addmembro',  [AdminController::class, 'addMembro']);
     Route::post('admin/admin/addmembro',  [AdminController::class, 'insertMembro']);
-    Route::get('admin/admin/edit{id}',  [AdminController::class, 'edit']);
-    Route::post('admin/admin/edit{id}',  [AdminController::class, 'update']);
-    Route::get('admin/admin/delete{id}',  [AdminController::class, 'delete']);
+    Route::get('admin/admin/edit/{id}',  [AdminController::class, 'edit']);
+    Route::post('admin/admin/edit/{id}',  [AdminController::class, 'update']);
+    Route::get('admin/admin/delete/{id}',  [AdminController::class, 'delete']);
 
 });
 

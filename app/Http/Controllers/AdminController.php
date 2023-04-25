@@ -56,14 +56,16 @@ class AdminController extends Controller
 
     public function edit($id){
         $data['getRecord'] = User::getSingle($id);
-        if (!empty($data['geRecord'])) {
-
+        if (!empty($data['getRecord'])) {
             $data['header_title'] = 'editar admin ';
             return view('admin.admin.edit', $data);
-
         }else{
             abort(404);
         }
+
+            
+
+        
 
     }
 

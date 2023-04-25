@@ -58,4 +58,8 @@ class User extends Authenticatable
         return User::where('email', '=', $email)->first();
     }
 
+    static public function getSingle($id){
+        return User::find($id);
+    }
+
 }
