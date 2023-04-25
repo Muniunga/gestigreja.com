@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Support\Facades\DB;
 use App\Models\User;
 use Hash;
 
@@ -20,6 +21,18 @@ class AdminController extends Controller
         return view('admin.admin.add', $data);
     }
 
+    public function addMembro(){
+
+        $data['header_title'] = 'add novo membro ';
+        return view('admin.admin.addmembro', $data);
+    }
+
+    public function membros(){
+
+        $data['header_title'] = 'Membro ';
+        return view('admin.admin.membros', $data);
+    }
+
     public function insert (Request $request){
      // dd($request->all());
       $user = new user;
@@ -29,6 +42,16 @@ class AdminController extends Controller
       $user->user_type= 1;
       $user->save();
       return redirect('admin/admin/lista')->with('error', "Adicionado com sucesso");
+    }
+    public function insertMembro (Request $request){
+     // dd($request->all());
+      $user = new user;
+      $user->name= trim($request->name);
+      $user->email= trim($request->email);
+      $user->password= Hash::make($request->password);
+      $user->user_type= 1;
+      $user->save();
+      return redirect('admin/admin/membros')->with('error', "Adicionado com sucesso");
     }
 
     public function edit($id){
@@ -49,7 +72,7 @@ class AdminController extends Controller
         $user =  User::getSingle($id);
         $user->name= trim($request->name);
         $user->email= trim($request->email);
-        if (!empty($reques->password)) {
+        if (!empty($request->password)) {
             $user->password= Hash::make($request->password);
         }
         $user->save();

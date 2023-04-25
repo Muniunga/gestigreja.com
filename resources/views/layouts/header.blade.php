@@ -147,6 +147,15 @@
             </a>
           </li>
           <li class="nav-item">
+          
+            <a href="{{url('admin/admin/membros') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Membros
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{url('logout') }}" class="nav-link">
                <i class="fa fa-sign-out" aria-hidden="true"></i>
               <p>

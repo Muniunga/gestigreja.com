@@ -44,9 +44,12 @@ Route::get('admin/admin/lista', function () {
 
 Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/dashboard', [DashboardController::class, 'dashboard']);
-    Route::get('admin.admin.lista',  [AdminController::class, 'lista']);
+    Route::get('admin/admin/lista',  [AdminController::class, 'lista']);
+    Route::get('admin/admin/membros',  [AdminController::class, 'membros']);
     Route::get('admin/admin/add',  [AdminController::class, 'add']);
     Route::post('admin/admin/add',  [AdminController::class, 'insert']);
+    Route::get('admin/admin/addmembro',  [AdminController::class, 'addMembro']);
+    Route::post('admin/admin/addmembro',  [AdminController::class, 'insertMembro']);
     Route::get('admin/admin/edit{id}',  [AdminController::class, 'edit']);
     Route::post('admin/admin/edit{id}',  [AdminController::class, 'update']);
     Route::get('admin/admin/delete{id}',  [AdminController::class, 'delete']);
