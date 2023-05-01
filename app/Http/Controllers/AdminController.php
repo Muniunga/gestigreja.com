@@ -35,6 +35,9 @@ class AdminController extends Controller
 
     public function insert (Request $request){
      // dd($request->all());
+     request()->validate([
+        'email' => 'required|email|unique:users'
+     ]);
       $user = new user;
       $user->name= trim($request->name);
       $user->email= trim($request->email);
@@ -55,6 +58,7 @@ class AdminController extends Controller
     }
 
     public function edit($id){
+        
         $data['getRecord'] = User::getSingle($id);
         if (!empty($data['getRecord'])) {
             $data['header_title'] = 'editar admin ';
@@ -63,14 +67,16 @@ class AdminController extends Controller
             abort(404);
         }
 
-            
 
-        
+
+
 
     }
 
     public function update(Request $request, $id){
-
+        request()->validate([
+            'email' => 'required|email|unique:users,email,'.$id
+         ]);
         $user =  User::getSingle($id);
         $user->name= trim($request->name);
         $user->email= trim($request->email);
