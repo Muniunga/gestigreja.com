@@ -10,13 +10,13 @@ class MembroController extends Controller
      public function lista()
     {
         $data['getRecord'] = MembroModel::getRecord();
-        $data['header_title']= "Paroquias";
+        $data['header_title']= "Membros";
         return view('admin.membro.lista', $data);
     }
     public function add()
     {
        
-        $data['header_title']= "Adicionar Paroquias";
+        $data['header_title']= "Adicionar Membros";
         return view('admin.membro.add', $data);
     }
 
@@ -26,11 +26,15 @@ class MembroController extends Controller
          $save = new MembroModel;
          $save->name= $request->name;
          $save->endereco= $request->endereco;
+         $save->telefone= $request->telefone;
+         $save->paroquia= $request->paroquia;
+         $save->idade= $request->idade;
+         $save->genero= $request->genero;
         
         
         
          $save->save();
-         return redirect('admin/membro/lista')->with('error', "Paroquia Adicionado com sucesso");
+         return redirect('admin/membro/lista')->with('error', "Membros Adicionado com sucesso");
        }
 
        public function edit($id){
@@ -49,8 +53,11 @@ class MembroController extends Controller
         $save= MembroModel::getSingle($id);
         $save->name= $request->name;
         $save->endereco= $request->endereco;
+        $save->telefone= $request->telefone;
+        $save->paroquia= $request->paroquia;
+        $save->idade= $request->idade;
+        $save->genero= $request->genero;
         $save->save();
-
         return redirect('admin/membro/lista')->with('error', "membro Atualizado com sucesso");
     }
     public function delete($id){

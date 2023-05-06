@@ -33,9 +33,9 @@
                                 <div class="form-group">
                                     <label>Genero</label>
 
-                                    <select class="form-control">
-                                        <option>Masculino</option>
-                                        <option>Femenino</option>
+                                    <select class="form-control" name="genero">
+                                        <option value="1">Masculino</option>
+                                        <option value="2">Femenino</option>
                                         
                                     </select>
                                 </div>
@@ -43,12 +43,9 @@
                                 <div class="form-group">
                                     <label>Paroquia</label>
 
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                    <select class="form-control" name="paroquia">
+                                    <option value="1">Bom Deus</option>
+                       
                                     </select>
                                 </div>
 
@@ -64,14 +61,21 @@
                                 <div class="form-group">
                                     <label>Endereço</label>
 
-                                    <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                    <select class="form-control" name="endereco">
+                                    <option value="1">Luanda</option>
+                                    <option value="2">Benguela</option>
                                     </select>
                                 </div>
+                               <!-- <div class="form-group">
+                    <label for="exampleInputFile">Fotografia</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Escolher imagem</label>
+                      </div>
+                      
+                    </div>
+                  </div> -->
 
 
                             </div>
