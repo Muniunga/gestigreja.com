@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EnderecoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,15 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/admin/edit/{id}',  [AdminController::class, 'edit']);
     Route::post('admin/admin/edit/{id}',  [AdminController::class, 'update']);
     Route::get('admin/admin/delete/{id}',  [AdminController::class, 'delete']);
+
+
+    // rotas endereco
+    Route::get('admin/endereco/lista',  [EnderecoController::class, 'lista']);
+    Route::get('admin/endereco/add',  [EnderecoController::class, 'add']);
+    Route::post('admin/endereco/add',  [EnderecoController::class, 'insert']);
+    Route::get('admin/endereco/edit/{idEndereco}',  [EnderecoController::class, 'edit']);
+    Route::post('admin/endereco/edit/{idEndereco}',  [EnderecoController::class, 'update']);
+    Route::get('admin/endereco/delete/{idEndereco}',  [EnderecoController::class, 'delete']);
 
 });
 
