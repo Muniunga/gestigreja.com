@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\ParoquiaController;
+use App\Http\Controllers\MembroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,6 +73,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/paroquia/edit/{id}',  [ParoquiaController::class, 'edit']);
     Route::post('admin/paroquia/edit/{id}',  [ParoquiaController::class, 'update']);
     Route::get('admin/paroquia/delete/{id}',  [ParoquiaController::class, 'delete']);
+
+    //Rotas Membro
+    Route::get('admin/membro/lista',  [MembroController::class, 'lista']);
+    Route::get('admin/membro/add',  [MembroController::class, 'add']);
+    Route::post('admin/membro/add',  [MembroController::class, 'insert']);
+    Route::get('admin/membro/edit/{id}',  [MembroController::class, 'edit']);
+    Route::post('admin/membro/edit/{id}',  [MembroController::class, 'update']);
+    Route::get('admin/membro/delete/{id}',  [MembroController::class, 'delete']);
 
 });
 
