@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\ParoquiaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,14 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/endereco/edit/{id}',  [EnderecoController::class, 'edit']);
     Route::post('admin/endereco/edit/{id}',  [EnderecoController::class, 'update']);
     Route::get('admin/endereco/delete/{id}',  [EnderecoController::class, 'delete']);
+
+    // Rotas paroquia
+    Route::get('admin/paroquia/lista',  [ParoquiaController::class, 'lista']);
+    Route::get('admin/paroquia/add',  [ParoquiaController::class, 'add']);
+    Route::post('admin/paroquia/add',  [ParoquiaController::class, 'insert']);
+    Route::get('admin/paroquia/edit/{id}',  [ParoquiaController::class, 'edit']);
+    Route::post('admin/paroquia/edit/{id}',  [ParoquiaController::class, 'update']);
+    Route::get('admin/paroquia/delete/{id}',  [ParoquiaController::class, 'delete']);
 
 });
 

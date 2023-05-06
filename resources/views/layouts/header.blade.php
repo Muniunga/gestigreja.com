@@ -155,6 +155,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{url('admin/paroquia/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Paroquias
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
 
             <a href="{{url('admin/admin/membros') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
               <i class="nav-icon far fa-user"></i>
