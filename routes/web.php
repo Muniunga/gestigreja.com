@@ -60,9 +60,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/endereco/lista',  [EnderecoController::class, 'lista']);
     Route::get('admin/endereco/add',  [EnderecoController::class, 'add']);
     Route::post('admin/endereco/add',  [EnderecoController::class, 'insert']);
-    Route::get('admin/endereco/edit/{idEndereco}',  [EnderecoController::class, 'edit']);
-    Route::post('admin/endereco/edit/{idEndereco}',  [EnderecoController::class, 'update']);
-    Route::get('admin/endereco/delete/{idEndereco}',  [EnderecoController::class, 'delete']);
+    Route::get('admin/endereco/edit/{id}',  [EnderecoController::class, 'edit']);
+    Route::post('admin/endereco/edit/{id}',  [EnderecoController::class, 'update']);
+    Route::get('admin/endereco/delete/{id}',  [EnderecoController::class, 'delete']);
 
 });
 

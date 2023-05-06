@@ -13,13 +13,14 @@ class EnderecoModel extends Model
     static public function getRecord()
     {
         $return = self::select('endereco.*')
+        ->where('estado','=',1)
 
-            ->orderBy('idEndereco', 'desc')
+            ->orderBy('id', 'desc')
             ->paginate(20);
 
         return $return;
     }
-    static public function getSingle($idEndereco){
-        return self::find($idEndereco);
+    static public function getSingle($id){
+        return self::find($id);
     }
 }

@@ -28,11 +28,11 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label>Provincia</label>
-                    <input type="text" class="form-control" name="provincia" value="{{$getRecord->provincia }}"  required placeholder="Adicionar Provincia">
+                    <input type="text" class="form-control" name="provincia" value="{{$getRecord->Provincia }}"  required placeholder="Adicionar Provincia">
                   </div>
                   <div class="form-group">
                     <label>Municipio </label>
-                    <input type="text" class="form-control" name="municipio" value="{{ $getRecord->municipio }}" required placeholder="Adicionar Municipio">
+                    <input type="text" class="form-control" name="municipio" value="{{ $getRecord->Municipio }}" required placeholder="Adicionar Municipio">
                 
                     
                   </div>

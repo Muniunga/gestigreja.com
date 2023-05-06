@@ -111,7 +111,7 @@
                                     @foreach ($getRecord as $value)
 
                                     <tr>
-                                        <td>{{ $value->idEndereco }}</td>
+                                        <td>{{ $value->id }}</td>
                                         <td>{{ $value->Provincia }}</td>
                                         <td>{{ $value->Municipio }}</td>
                                         <td>{{ $value->casa }}</td>
@@ -122,8 +122,8 @@
                                         
                                         
                                         <td>
-                                            <a href="{{ url('admin/endereco/edit/'.$value->idEndereco) }}" class="btn btn-primary">editar</a>
-                                            <a href="{{ url('admin/endereco/delete/'.$value->idEndereco) }}" class="btn btn-danger">apagar</a>
+                                            <a href="{{ url('admin/endereco/edit/'.$value->id) }}" class="btn btn-primary">editar</a>
+                                            <a href="{{ url('admin/endereco/delete/'.$value->id) }}" class="btn btn-danger">apagar</a>
                                         </td>
                                     </tr>
                                     @endforeach
