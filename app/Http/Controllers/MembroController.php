@@ -20,6 +20,13 @@ class MembroController extends Controller
         return view('admin.membro.add', $data);
     }
 
+    public function detalhe()
+    {
+        $data['getRecord'] = MembroModel::getRecord();
+        $data['header_title']= "Detalhe Membro";
+        return view('admin.membro.detalhe', $data);
+    }
+
     public function insert (Request $request){
         // dd($request->all());
         

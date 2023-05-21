@@ -101,11 +101,10 @@
                                         <th>#</th>
                                         <th>Nome</th>
                                         <th>idade</th>
-                                        <th>genero</th>
-                                        <th>telefone</th>
-                                        <th>Endereço</th>
+
+
                                         <th>Paroquia</th>
-                                        <th>Estado</th>
+                                       
                                         <th>acções</th>
 
                                     </tr>
@@ -117,29 +116,19 @@
                                         <td>{{ $value->id }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->idade }}</td>
-                                        <td>@if($value->genero==1)Masculino
-                                            @else Femenino
-                                            @endif
-                                        </td>
-                                        <td>{{ $value->telefone }}</td>
-                                        <td>@if($value->endereco==1)Luanda
-                                            @else Benguela
-                                            @endif
-                                        </td>
+                                       
+                                       
                                         <td>@if($value->paroquia==1)Bom Deus
-                                           
+
                                             @endif
                                         </td>
-                                        <td>@if($value->estado==1)Ativo
-                                            @else Inativo
-                                            @endif
-                                        </td>
+                                       
 
 
                                         <td>
-                                            <a href="{{ url('admin/membro/edit/'.$value->id) }}" class="btn btn-primary">editar</a>
-                                            <a href="{{ url('admin/membro/delete/'.$value->id) }}" class="btn btn-danger">apagar</a>
-                                        </td>
+                                            <a href="{{ url('admin/membro/detalhe/'.$value->id) }}" class="btn btn-primary"> Ver mais</a>
+                                           
+                                        </td> 
                                     </tr>
                                     @endforeach
                             </table>

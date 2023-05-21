@@ -81,6 +81,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('admin/membro/edit/{id}',  [MembroController::class, 'edit']);
     Route::post('admin/membro/edit/{id}',  [MembroController::class, 'update']);
     Route::get('admin/membro/delete/{id}',  [MembroController::class, 'delete']);
+    Route::get('admin/membro/detalhe/{id}',  [MembroController::class, 'detalhe']);
 
 });
 
