@@ -20,6 +20,16 @@ class MembroModel extends Model
 
         return $return;
     }
+    static public function getMembro()
+    {
+        $return = self::select('membro.*')
+        ->where('estado','=',1)
+
+            ->orderBy('id', 'desc')
+            ->paginate(20);
+
+        return $return;
+    }
     static public function getSingle($id){
         return self::find($id);
     }

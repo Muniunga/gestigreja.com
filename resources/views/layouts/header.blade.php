@@ -116,7 +116,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-         
+
         </div>
         <div class="info">
           <a href="#" class="d-block">Alexander Pierce</a>
@@ -168,6 +168,16 @@
               <i class="nav-icon far fa-user"></i>
               <p>
                 Membros
+              </p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+
+            <a href="{{url('admin/sancao/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
+              <i class="nav-icon far fa-user"></i>
+              <p>
+                Sanções
               </p>
             </a>
           </li>

@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\ParoquiaController;
 use App\Http\Controllers\MembroController;
+use App\Http\Controllers\SancaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,17 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/membro/edit/{id}',  [MembroController::class, 'update']);
     Route::get('admin/membro/delete/{id}',  [MembroController::class, 'delete']);
     Route::get('admin/membro/detalhe/{id}',  [MembroController::class, 'detalhe']);
+
+
+    //Rotas sancao
+    Route::get('admin/sancao/lista',  [SancaoController::class, 'lista']);
+    Route::get('admin/sancao/add',  [SancaoController::class, 'add']);
+    Route::post('admin/sancao/add',  [SancaoController::class, 'insert']);
+    Route::get('admin/sancao/edit/{id}',  [SancaoController::class, 'edit']);
+    Route::post('admin/sancao/edit/{id}',  [SancaoController::class, 'update']);
+    Route::get('admin/sancao/delete/{id}',  [SancaoController::class, 'delete']);
+    Route::get('admin/sancao/detalhe/{id}',  [SancaoController::class, 'detalhe']);
+
 
 });
 
