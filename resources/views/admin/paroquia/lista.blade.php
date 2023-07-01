@@ -117,8 +117,8 @@
                                             @else Inativo
                                             @endif
                                         </td>
-                                        
-                                        
+
+
                                         <td>
                                             <a href="{{ url('admin/paroquia/edit/'.$value->id) }}" class="btn btn-primary">editar</a>
                                             <a href="{{ url('admin/paroquia/delete/'.$value->id) }}" class="btn btn-danger">apagar</a>

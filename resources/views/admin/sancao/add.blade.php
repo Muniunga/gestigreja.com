@@ -43,7 +43,7 @@
                   </div>
                   <div class="form-group">
                     <label>Motivo </label>
-                    <select  name="membro" class="form-control">
+                    <select  name="motivo" class="form-control">
                         @foreach($getMotivo as $value)
                         <option value="{{$value->id}}"> {{$value->descricao}}</option>
                         @endforeach
@@ -51,6 +51,11 @@
                     </select>
                    
                   </div>
+                  <div class="form-group">
+                    <label>data Inicio</label>
+                    <input type="date" class="form-control"  value="{{ old('dataInicio') }}" name="dataInicio"   required placeholder="Adicionar Nome da Paroquia">
+                  </div>
+
                   <div class="form-group">
                     <label>data fim</label>
                     <input type="date" class="form-control" name="dataFim" value="{{ old('dataFim') }}"  required placeholder="Adicionar Nome da Paroquia">

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\MembroModel;
+
+use App\Models\EnderecoModel;
+use App\Models\ParoquiaModel;
 class MembroController extends Controller
 {
      public function lista()
@@ -15,14 +18,19 @@ class MembroController extends Controller
     }
     public function add()
     {
+    
+        $data['getEndereco']= EnderecoModel::getRecord();
+        $data['getParoquia']= ParoquiaModel::getRecord();
        
         $data['header_title']= "Adicionar Membros";
         return view('admin.membro.add', $data);
     }
 
-    public function detalhe()
+    public function detalhe($id) 
     {
-        $data['getRecord'] = MembroModel::getRecord();
+        $data['getEndereco']= EnderecoModel::getRecord();
+        $data['getParoquia']= ParoquiaModel::getRecord();
+        $data['getRecord'] = MembroModel::getSingle($id);
         $data['header_title']= "Detalhe Membro";
         return view('admin.membro.detalhe', $data);
     }

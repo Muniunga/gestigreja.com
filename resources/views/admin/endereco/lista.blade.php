@@ -46,11 +46,11 @@
                             <div class="row">
                                 <div class="form-group col-md-4">
                                     <label>Provincia</label>
-                                    <input type="text" class="form-control" value="{{ Request::get('name') }}" name="name" placeholder="Nome ">
+                                    <input type="text" class="form-control" value="{{ Request::get('provincia') }}" name="provincia" placeholder="provincia ">
                                 </div>
                                 <div class="form-grou col-md-4">
                                     <label>Municipio </label>
-                                    <input type="text" class="form-control" value="{{ Request::get('email') }}" name="email" placeholder="Email">
+                                    <input type="text" class="form-control" value="{{ Request::get('municipio') }}" name="municipio" placeholder="municipio">
                                 </div>
 
 

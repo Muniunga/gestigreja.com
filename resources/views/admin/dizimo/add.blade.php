@@ -19,7 +19,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title"> Adicionar Paroquia</h3>
+                <h3 class="card-title"> Adicionar Dizimo</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -27,20 +27,29 @@
                 {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Nome</label>
-                    <input type="text" class="form-control" name="name" value="{{ old('name') }}"  required placeholder="Adicionar Nome da Paroquia">
+                    <label>Valor</label>
+                    <input type="text" class="form-control" name="valor" value="{{ old('valor') }}"  required placeholder="Adicionar uma descrição">
                   </div>
                   <div class="form-group">
-                    <label>Endereço </label>
-                    <select  name="endereco" class="form-control">
-                        @foreach($getEndereco as $value)
-                        <option value="{{$value->id}}"> {{$value->Municipio}}</option>
+                    <label>Descricao</label>
+                    <input type="text" class="form-control" name="descricao" value="{{ old('descricao') }}"  required placeholder="Adicionar uma descrição">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Membro </label>
+                    <select  name="membro" class="form-control">
+                        @foreach($getMembro as $value)
+                        <option value="{{$value->id}}"> {{$value->name}}</option>
                         @endforeach
                         
                     </select>
                    
-                
-                    
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <label>data </label>
+                    <input type="date" class="form-control" name="data" value="{{ old('data') }}"  required placeholder="Adicionar Nome da Paroquia">
                   </div>
                  
 

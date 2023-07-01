@@ -19,7 +19,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title"> Adicionar Paroquia</h3>
+                <h3 class="card-title"> Atualizar Dizimo</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -27,29 +27,28 @@
                 {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    <label>Nome</label>
-                    <input type="text" class="form-control" name="name" value="{{ old('name') }}"  required placeholder="Adicionar Nome da Paroquia">
+                    <label>Valor</label>
+                    <input type="text" class="form-control" name="valor" value="{{$getRecord->valor }}"  required placeholder="Adicionar uma descrição">
                   </div>
                   <div class="form-group">
-                    <label>Endereço </label>
-                    <select  name="endereco" class="form-control">
-                        @foreach($getEndereco as $value)
-                        <option value="{{$value->id}}"> {{$value->Municipio}}</option>
+                    <label>Descricao</label>
+                    <input type="text" class="form-control" name="descricao" value="{{$getRecord->descricao }}"  required placeholder="Adicionar uma descrição">
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Membro </label>
+                    <select  name="membro" class="form-control">
+                        @foreach($getMembro as $value)
+                        <option value="{{$getRecord->name }}" {{$value->name}}</option>
                         @endforeach
                         
                     </select>
                    
-                
-                    
                   </div>
-                 
-
-
-                </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Adicionar</button>
+                  <button type="submit" class="btn btn-primary">Atualizar</button>
                 </div>
               </form>
             </div>

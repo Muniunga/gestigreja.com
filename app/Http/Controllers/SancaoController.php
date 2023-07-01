@@ -30,6 +30,7 @@ class SancaoController extends Controller
          $save->descricao= $request->descricao;
          $save->membro= $request->membro;
          $save->motivo= $request->motivo;
+         $save->dataInicio= $request->dataInicio;
          $save->dataFim= $request->dataFim;
         
         
@@ -40,7 +41,9 @@ class SancaoController extends Controller
 
        public function edit($id){
         
-        $data['getRecord'] = SancaoModel::getSingle($id);
+           $data['getRecord'] = SancaoModel::getSingle($id);
+           $data['getMembro']= MembroModel::getMembro();
+           $data['getMotivo']= MotivoModel::getRecord();
         if (!empty($data['getRecord'])) {
             $data['header_title'] = 'editar sancao ';
             return view('admin.sancao.edit', $data);
@@ -52,9 +55,12 @@ class SancaoController extends Controller
 
     public function update($id, Request $request){
         $save= SancaoModel::getSingle($id);
-        $save->name= $request->name;
-        $save->endereco= $request->endereco;
-        $save->save();
+             
+        $save->descricao= $request->descricao;
+        $save->membro= $request->membro;
+        $save->motivo= $request->motivo;
+        $save->dataInicio= $request->dataInicio;
+        $save->dataFim= $request->dataFim;
 
         return redirect('admin/sancao/lista')->with('error', "sancao Atualizado com sucesso");
     }

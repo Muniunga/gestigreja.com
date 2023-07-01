@@ -36,7 +36,7 @@
                 <!-- general form elements -->
                 <div class="card ">
                     <div class="card-header">
-                        <h3 class="card-title"> Pesquisar Membro</h3>
+                        <h3 class="card-title"> Pesquisar endereço</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -45,18 +45,22 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label>Provincia</label>
+                                    <label>Membro</label>
                                     <input type="text" class="form-control" value="{{ Request::get('name') }}" name="name" placeholder="Nome ">
                                 </div>
-                                <div class="form-grou col-md-4">
-                                    <label>Municipio </label>
-                                    <input type="text" class="form-control" value="{{ Request::get('email') }}" name="email" placeholder="Email">
+                                <div class="form-group col-md-4">
+                                    <label>Idade </label>
+                                    <input type="text" class="form-control" value="{{ Request::get('idade') }}" name="idade" placeholder="idade">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Paroquia </label>
+                                    <input type="text" class="form-control" value="{{ Request::get('paroquia') }}" name="paroquia" placeholder="paroquia">
                                 </div>
 
 
                                 <div class="form-grou col-md-3">
                                     <button class="btn btn-primary" type="submit" style="margin-top:30px;">pesquisar</button>
-                                    <a href="{{ url('admin/membro/lista') }}" class="btn btn-success" type="submit" style="margin-top:30px;">concluir</a>
+                                    <a href="{{ url('admin/endereco/lista') }}" class="btn btn-success" type="submit" style="margin-top:30px;">concluir</a>
                                 </div>
 
                             </div>
@@ -101,6 +105,8 @@
                                         <th>#</th>
                                         <th>Nome</th>
                                         <th>idade</th>
+                                        <th>telefone</th>
+                                        <th>endereço</th>
 
 
                                         <th>Paroquia</th>
@@ -116,17 +122,19 @@
                                         <td>{{ $value->id }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->idade }}</td>
+                                        <td>{{ $value->telefone }}</td>
+                                        <td>{{ $value->endereco }}</td>
+                                        <td>{{ $value->paroquia }}</td>
                                        
                                        
-                                        <td>@if($value->paroquia==1)Bom Deus
-
-                                            @endif
-                                        </td>
+                                        
                                        
 
 
                                         <td>
-                                            <a href="{{ url('admin/membro/detalhe/'.$value->id) }}" class="btn btn-primary"> Ver mais</a>
+                                        <a href="{{ url('admin/membro/edit/'.$value->id ) }}" class="btn btn-primary">editar</a>
+                                            <a href="{{ url('admin/membro/delete/'.$value->id  ) }}" class="btn btn-danger">apagar</a>
+                                            <a href="{{ url('admin/membro/detalhe/'.$value->id  ) }}" class="btn btn-danger">mais</a>
                                            
                                         </td> 
                                     </tr>

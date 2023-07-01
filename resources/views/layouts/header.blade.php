@@ -119,7 +119,7 @@
 
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <!--<a href="#" class="d-block">Alexander Pierce</a>-->
         </div>
       </div>
 
@@ -139,7 +139,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('admin/admin/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
+            <a href="{{url('admin/admin/lista') }}" class="nav-link @if(Request::segment(2) =='') active @endif">
               <i class="nav-icon far fa-user"></i>
               <p>
                 Usuarios
@@ -147,16 +147,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('admin/endereco/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
-              <i class="nav-icon far fa-user"></i>
+            <a href="{{url('admin/endereco/lista') }}" class="nav-link @if(Request::segment(2) =='endereco') active @endif">
+              <i class="nav-icon fas fa-map-marker-alt mr-1"></i>
               <p>
                 Endereços
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('admin/paroquia/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
-              <i class="nav-icon far fa-user"></i>
+            <a href="{{url('admin/paroquia/lista') }}" class="nav-link @if(Request::segment(2) =='paroquia') active @endif">
+              <i class="nav-icon fas fa-lg fa-regular fa-landmark fa-fw"></i>
               <p>
                 Paroquias
               </p>
@@ -164,8 +164,8 @@
           </li>
           <li class="nav-item">
 
-            <a href="{{url('admin/membro/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
-              <i class="nav-icon far fa-user"></i>
+            <a href="{{url('admin/membro/lista') }}" class="nav-link @if(Request::segment(2) =='membro') active @endif">
+              <i class="nav-icon fas fa-lg fa-users"></i>
               <p>
                 Membros
               </p>
@@ -174,8 +174,27 @@
 
           <li class="nav-item">
 
-            <a href="{{url('admin/sancao/lista') }}" class="nav-link @if(Request::segment(2) =='admin') active @endif">
-              <i class="nav-icon far fa-user"></i>
+            <a href="{{url('admin/dizimo/lista') }}" class="nav-link @if(Request::segment(2) =='dizimo') active @endif">
+            <i class="nav-icon fas fa fa-dollar"></i>
+              <p>
+                Dizimos
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+
+            <a href="{{url('admin/oferta/lista') }}" class="nav-link @if(Request::segment(2) =='oferta') active @endif">
+              <i class="nav-icon  fas fa-lg fa-tags fa-fw "></i>
+
+              <p>
+                Ofertas
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+
+            <a href="{{url('admin/sancao/lista') }}" class="nav-link @if(Request::segment(2) =='sancao') active @endif">
+              <i class="nav-icon fas fa-lg fa-exclamation-circle fa-fw"></i>
               <p>
                 Sanções
               </p>
@@ -183,9 +202,9 @@
           </li>
           <li class="nav-item">
             <a href="{{url('logout') }}" class="nav-link">
-               <i class="fa fa-sign-out" aria-hidden="true"></i>
+               <i class="nav-icon fas fa-lg fa-sign-out-alt" aria-hidden="true"></i>
               <p>
-                sair
+                Sair
               </p>
             </a>
           </li>

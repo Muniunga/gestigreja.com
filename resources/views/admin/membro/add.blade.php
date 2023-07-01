@@ -43,10 +43,12 @@
                                 <div class="form-group">
                                     <label>Paroquia</label>
 
-                                    <select class="form-control" name="paroquia">
-                                    <option value="1">Bom Deus</option>
-                       
-                                    </select>
+                                    <select  name="paroquia" class="form-control">
+                        @foreach($getParoquia as $value)
+                        <option value="{{$value->id}}"> {{$value->name}}</option>
+                        @endforeach
+                        
+                    </select>
                                 </div>
 
 
@@ -61,10 +63,12 @@
                                 <div class="form-group">
                                     <label>Endereço</label>
 
-                                    <select class="form-control" name="endereco">
-                                    <option value="1">Luanda</option>
-                                    <option value="2">Benguela</option>
-                                    </select>
+                                    <select  name="endereco" class="form-control">
+                        @foreach($getEndereco as $value)
+                        <option value="{{$value->id}}"> {{$value->Municipio}}</option>
+                        @endforeach
+                        
+                    </select>
                                 </div>
                                <!-- <div class="form-group">
                     <label for="exampleInputFile">Fotografia</label>

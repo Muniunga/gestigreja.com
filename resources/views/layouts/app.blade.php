@@ -50,6 +50,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{ url('public/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
+<script src="{{ url('public/plugins/chart.js/Chart.js') }}"></script>
 <script src="{{ url('public/plugins/chart.js/Chart.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ url('public/plugins/sparklines/sparkline.js') }}"></script>

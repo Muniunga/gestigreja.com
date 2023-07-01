@@ -33,27 +33,32 @@
                   
                   <div class="form-group">
                     <label>Membro </label>
-                    <select name="membro" class="form-control">
-                        <option value="1">Luanda</option>
-                        <option value="2">Benguela</option>
+                    <select  name="membro" class="form-control">
+                        @foreach($getMembro as $value)
+                        <option value="{{$getRecord->id}}"> {{$value->name}}</option>
+                        @endforeach
                         
                     </select>
                    
                   </div>
                   <div class="form-group">
                     <label>Motivo </label>
-                    <select name="motivo" class="form-control">
-                        <option value="1">Luanda</option>
-                        <option value="2">Benguela</option>
+                    <select  name="motivo" class="form-control">
+                        @foreach($getMotivo as $value)
+                        <option value="{{$getRecord->id}}"> {{$value->descricao}}</option>
+                        @endforeach
                         
                     </select>
                    
-                
-                    
                   </div>
                   <div class="form-group">
+                    <label>data Inicio</label>
+                    <input type="date" class="form-control"  value="{{$getRecord->dataInicio }}" name="dataInicio"   required placeholder="Adicionar Nome da Paroquia">
+                  </div>
+
+                  <div class="form-group">
                     <label>data fim</label>
-                    <input type="date" class="form-control"  value="{{$getRecord->dataFim }}" name="dataFim" value="{{ old('dataFim') }}"  required placeholder="Adicionar Nome da Paroquia">
+                    <input type="date" class="form-control"  value="{{$getRecord->dataFim }}" name="dataFim"   required placeholder="Adicionar Nome da Paroquia">
                   </div>
                  
 

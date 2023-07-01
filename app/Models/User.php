@@ -47,7 +47,7 @@ class User extends Authenticatable
         return self::find($id);
     }
 
-   static public function getAdmin(){
+static public function getAdmin(){
     $return = self::select('users.*')
                             ->where('user_type','=',1)
                             ->where('is_delete','=',0);
@@ -66,7 +66,7 @@ class User extends Authenticatable
                             ->paginate(20);
 
                             return $return;
-   }
+   }   
 
     static public function getEmailSingle($email){
         return User::where('email', '=', $email)->first();

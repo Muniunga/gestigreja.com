@@ -12,8 +12,8 @@ class ParoquiaModel extends Model
 
     static public function getRecord()
     {
-        $return = self::select('paroquia.*')
-        ->where('estado','=',1)
+        $return = self::select('paroquia.*','endereco.Municipio as endereco')
+        ->join('endereco', 'endereco.id', 'paroquia.endereco')
 
             ->orderBy('id', 'desc')
             ->paginate(20);

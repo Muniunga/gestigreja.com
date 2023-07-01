@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Models\ParoquiaModel;
+use App\Models\EnderecoModel;
 
 class ParoquiaController extends Controller
 {
@@ -17,7 +18,7 @@ class ParoquiaController extends Controller
     }
     public function add()
     {
-       
+        $data['getEndereco']= EnderecoModel::getRecord();
         $data['header_title']= "Adicionar Paroquias";
         return view('admin.paroquia.add', $data);
     }

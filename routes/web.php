@@ -9,6 +9,8 @@ use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\ParoquiaController;
 use App\Http\Controllers\MembroController;
 use App\Http\Controllers\SancaoController;
+use App\Http\Controllers\DizimoController;
+use App\Http\Controllers\OfertaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,6 +95,24 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/sancao/edit/{id}',  [SancaoController::class, 'update']);
     Route::get('admin/sancao/delete/{id}',  [SancaoController::class, 'delete']);
     Route::get('admin/sancao/detalhe/{id}',  [SancaoController::class, 'detalhe']);
+
+    //Rotas oferta
+    Route::get('admin/oferta/lista',  [OfertaController::class, 'lista']);
+    Route::get('admin/oferta/add',  [OfertaController::class, 'add']);
+    Route::post('admin/oferta/add',  [OfertaController::class, 'insert']);
+    Route::get('admin/oferta/edit/{id}',  [OfertaController::class, 'edit']);
+    Route::post('admin/oferta/edit/{id}',  [OfertaController::class, 'update']);
+    Route::get('admin/oferta/delete/{id}',  [OfertaController::class, 'delete']);
+
+    //Rotas dizimo
+
+    Route::get('admin/dizimo/lista',  [DizimoController::class, 'lista']);
+    Route::get('admin/dizimo/add',  [DizimoController::class, 'add']);
+    Route::post('admin/dizimo/add',  [DizimoController::class, 'insert']);
+    Route::get('admin/dizimo/edit/{id}',  [DizimoController::class, 'edit']);
+    Route::post('admin/dizimo/edit/{id}',  [DizimoController::class, 'update']);
+    Route::get('admin/dizimo/delete/{id}',  [DizimoController::class, 'delete']);
+
 
 
 });
