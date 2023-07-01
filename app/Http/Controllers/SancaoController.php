@@ -36,7 +36,7 @@ class SancaoController extends Controller
         
         
          $save->save();
-         return redirect('admin/sancao/lista')->with('error', "sancao Adicionado com sucesso");
+         return redirect('admin/sancao/lista')->with('success', "sancao Adicionado com sucesso");
        }
 
        public function edit($id){
@@ -55,20 +55,20 @@ class SancaoController extends Controller
 
     public function update($id, Request $request){
         $save= SancaoModel::getSingle($id);
-             
+       success      
         $save->descricao= $request->descricao;
         $save->membro= $request->membro;
         $save->motivo= $request->motivo;
         $save->dataInicio= $request->dataInicio;
         $save->dataFim= $request->dataFim;
 
-        return redirect('admin/sancao/lista')->with('error', "sancao Atualizado com sucesso");
+        return redirect('admin/sancao/lista')->with('success', "sancao Atualizado com sucesso");
     }
     public function delete($id){
         $save =  SancaoModel::getSingle($id);
         $save->estado = 2;
         $save->save();
-        return redirect('admin/sancao/lista')->with('error', "sancao Apagada com sucesso");
+        return redirect('admin/sancao/lista')->with('success', "sancao Apagada com sucesso");
     }
     public function detalhe()
     {

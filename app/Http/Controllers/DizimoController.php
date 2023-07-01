@@ -35,7 +35,7 @@ class DizimoController extends Controller
         
         
          $save->save();
-         return redirect('admin/dizimo/lista')->with('error', "dizimo Adicionada com sucesso");
+         return redirect('admin/dizimo/lista')->with('success', "dizimo Adicionada com sucesso");
        }
 
        public function edit($id){
@@ -58,12 +58,12 @@ class DizimoController extends Controller
         $save->descricao= $request->descricao;
         $save->membro= $request->membro;
         $save->data= $request->data;
-        return redirect('admin/dizimo/lista')->with('error', "dizimo Atualizado com sucesso");
+        return redirect('admin/dizimo/lista')->with('success', "dizimo Atualizado com sucesso");
     }
     public function delete($id){
         $save =  DizimoModel::getSingle($id);
         $save->estado = 2;
         $save->save();
-        return redirect('admin/dizimo/lista')->with('error', "dizimo Apagada com sucesso");
+        return redirect('admin/dizimo/lista')->with('success', "dizimo Apagada com sucesso");
     }
 }

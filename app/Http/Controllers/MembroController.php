@@ -49,7 +49,7 @@ class MembroController extends Controller
         
         
          $save->save();
-         return redirect('admin/membro/lista')->with('error', "Membros Adicionado com sucesso");
+         return redirect('admin/membro/lista')->with('success', "Membros Adicionado com sucesso");
        }
 
        public function edit($id){
@@ -73,12 +73,12 @@ class MembroController extends Controller
         $save->idade= $request->idade;
         $save->genero= $request->genero;
         $save->save();
-        return redirect('admin/membro/lista')->with('error', "membro Atualizado com sucesso");
+        return redirect('admin/membro/lista')->with('success', "membro Atualizado com sucesso");
     }
     public function delete($id){
         $save =  MembroModel::getSingle($id);
         $save->estado = 2;
         $save->save();
-        return redirect('admin/membro/lista')->with('error', "membro Apagado com sucesso");
+        return redirect('admin/membro/lista')->with('success', "membro Apagado com sucesso");
     }
 }

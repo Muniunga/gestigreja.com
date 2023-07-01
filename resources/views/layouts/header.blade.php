@@ -175,7 +175,7 @@
           <li class="nav-item">
 
             <a href="{{url('admin/dizimo/lista') }}" class="nav-link @if(Request::segment(2) =='dizimo') active @endif">
-            <i class="nav-icon fas fa fa-dollar"></i>
+            <i class="fas fa-badge-dollar    "></i>
               <p>
                 Dizimos
               </p>

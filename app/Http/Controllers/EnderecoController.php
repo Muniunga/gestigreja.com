@@ -30,7 +30,7 @@ class EnderecoController extends Controller
          $save->casa= $request->casa;
         
          $save->save();
-         return redirect('admin/endereco/lista')->with('error', "Endereco Adicionado com sucesso");
+         return redirect('admin/endereco/lista')->with('success', "Endereco Adicionado com sucesso");
        }
 
        public function edit($id){
@@ -52,12 +52,12 @@ class EnderecoController extends Controller
         $save->casa= $request->casa;
         $save->save();
 
-        return redirect('admin/endereco/lista')->with('error', "Endereco Atualizado com sucesso");
+        return redirect('admin/endereco/lista')->with('success', "Endereco Atualizado com sucesso");
     }
     public function delete($id){
         $save =  EnderecoModel::getSingle($id);
         $save->estado = 2;
         $save->save();
-        return redirect('admin/endereco/lista')->with('error', "Apagado com sucesso");
+        return redirect('admin/endereco/lista')->with('success', "Apagado com sucesso");
     }
 }

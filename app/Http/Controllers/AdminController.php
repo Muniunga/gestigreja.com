@@ -35,7 +35,7 @@ class AdminController extends Controller
       $user->password= Hash::make($request->password);
       $user->user_type= 1;
       $user->save();
-      return redirect('admin/admin/lista')->with('error', "Adicionado com sucesso");
+      return redirect('admin/admin/lista')->with('success', "Adicionado com sucesso");
     }
    
 
@@ -66,12 +66,12 @@ class AdminController extends Controller
             $user->password= Hash::make($request->password);
         }
         $user->save();
-        return redirect('admin/admin/lista')->with('error', "Atualizado com sucesso");
+        return redirect('admin/admin/lista')->with('success', "Atualizado com sucesso");
     }
     public function delete($id){
         $user =  User::getSingle($id);
         $user->is_delete = 1;
         $user->save();
-        return redirect('admin/admin/lista')->with('error', "Apagado com sucesso");
+        return redirect('admin/admin/lista')->with('success', "Apagado com sucesso");
     }
 }

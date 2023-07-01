@@ -33,7 +33,7 @@ class ParoquiaController extends Controller
         
         
          $save->save();
-         return redirect('admin/paroquia/lista')->with('error', "Paroquia Adicionado com sucesso");
+         return redirect('admin/paroquia/lista')->with('success', "Paroquia Adicionado com sucesso");
        }
 
        public function edit($id){
@@ -54,12 +54,12 @@ class ParoquiaController extends Controller
         $save->endereco= $request->endereco;
         $save->save();
 
-        return redirect('admin/paroquia/lista')->with('error', "paroquia Atualizado com sucesso");
+        return redirect('admin/paroquia/lista')->with('success', "paroquia Atualizado com sucesso");
     }
     public function delete($id){
         $save =  ParoquiaModel::getSingle($id);
         $save->estado = 2;
         $save->save();
-        return redirect('admin/paroquia/lista')->with('error', "paroquia Apagada com sucesso");
+        return redirect('admin/paroquia/lista')->with('success', "paroquia Apagada com sucesso");
     }
 }
