@@ -28,9 +28,10 @@ class MembroController extends Controller
 
     public function detalhe($id) 
     {
+        $data['getRecord'] = MembroModel::getRecord();
         $data['getEndereco']= EnderecoModel::getRecord();
         $data['getParoquia']= ParoquiaModel::getRecord();
-        $data['getRecord'] = MembroModel::getSingle($id);
+        $data['getSingle'] = MembroModel::getSingle($id);
         $data['header_title']= "Detalhe Membro";
         return view('admin.membro.detalhe', $data);
     }

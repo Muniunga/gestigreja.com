@@ -49,6 +49,11 @@ class MembroModel extends Model
         return $return;
     }
     static public function getSingle($id){
+         $return = self::select('membro.*','paroquia.name as paroquia', 'genero.descricao as genero','endereco.Municipio as endereco')
+        ->where('membro.estado','=', 1)
+        ->join('paroquia', 'paroquia.id', 'membro.paroquia')
+        ->join('genero', 'genero.id', 'membro.genero')
+        ->join('endereco', 'endereco.id', 'membro.endereco');
         return self::find($id);
     }
   

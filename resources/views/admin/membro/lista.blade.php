@@ -36,7 +36,7 @@
                 <!-- general form elements -->
                 <div class="card ">
                     <div class="card-header">
-                        <h3 class="card-title"> Pesquisar endereço</h3>
+                        <h3 class="card-title"> Pesquisar membro</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
@@ -104,8 +104,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nome</th>
-                                        <th>idade</th>
-                                        <th>telefone</th>
+                                        
                                         <th>endereço</th>
 
 
@@ -121,8 +120,7 @@
                                     <tr>
                                         <td>{{ $value->id }}</td>
                                         <td>{{ $value->name }}</td>
-                                        <td>{{ $value->idade }}</td>
-                                        <td>{{ $value->telefone }}</td>
+                                        
                                         <td>{{ $value->endereco }}</td>
                                         <td>{{ $value->paroquia }}</td>
                                        
@@ -132,9 +130,8 @@
 
 
                                         <td>
-                                        <a href="{{ url('admin/membro/edit/'.$value->id ) }}" class="btn btn-primary">editar</a>
-                                            <a href="{{ url('admin/membro/delete/'.$value->id  ) }}" class="btn btn-danger">apagar</a>
-                                            <a href="{{ url('admin/membro/detalhe/'.$value->id  ) }}" class="btn btn-danger">mais</a>
+                                        
+                                            <a href="{{ url('admin/membro/detalhe/'.$value->id  ) }}" class="btn btn-success">Mais</a>
                                            
                                         </td> 
                                     </tr>

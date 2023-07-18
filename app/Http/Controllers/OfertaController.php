@@ -66,4 +66,14 @@ class OfertaController extends Controller
         $save->save();
         return redirect('admin/oferta/lista')->with('success', "oferta Apagada com sucesso");
     }
+    public function graficoOfertasPorData()
+    {
+        $ofertas = OfertaModel::orderBy('data')->get(); // Recupera as ofertas ordenadas por data
+    
+        $valoresOfertas = $ofertas->pluck('valor'); // Array dos valores das ofertas
+        $datasOfertas = $ofertas->pluck('data'); // Array das datas das ofertas
+    
+        return view('admin/oferta/index')->with('valoresOfertas', $valoresOfertas)->with('datasOfertas', $datasOfertas);
+    }
+    
 }

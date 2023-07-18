@@ -34,21 +34,9 @@ class OfertaModel extends Model
         return self::find($id);
     }
 
-    static public function getGrafico(){
-       $grafico= OfertaModel::orderBy('created_at', 'ASC');
-       if( $grafico-> count() ){
-        $total=[];
-        foreach($grafico as $chave => $valor){
-            $dadosTotal=json_decode($valor['valor'], true);
-            foreach($dadosTotal as $chaveTotal => $valorTotal){
-                $total[ $chaveTotal ]= $valorTotal;
-            }
-           
-        }
-        return $grafico;
-       }else{
-        return null;
-       }
+    public function getAllOfertas()
+    {
+        return $this->orderBy('data')->pluck('valor'); // Recupera os valores das ofertas ordenados por mês
     }
 
 }

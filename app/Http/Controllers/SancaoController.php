@@ -25,22 +25,22 @@ class SancaoController extends Controller
 
     public function insert (Request $request){
         // dd($request->all());
-        
+
          $save = new SancaoModel;
          $save->descricao= $request->descricao;
          $save->membro= $request->membro;
          $save->motivo= $request->motivo;
          $save->dataInicio= $request->dataInicio;
          $save->dataFim= $request->dataFim;
-        
-        
-        
+
+
+
          $save->save();
          return redirect('admin/sancao/lista')->with('success', "sancao Adicionado com sucesso");
        }
 
        public function edit($id){
-        
+
            $data['getRecord'] = SancaoModel::getSingle($id);
            $data['getMembro']= MembroModel::getMembro();
            $data['getMotivo']= MotivoModel::getRecord();
@@ -55,7 +55,6 @@ class SancaoController extends Controller
 
     public function update($id, Request $request){
         $save= SancaoModel::getSingle($id);
-       success      
         $save->descricao= $request->descricao;
         $save->membro= $request->membro;
         $save->motivo= $request->motivo;

@@ -32,7 +32,7 @@
               <div class="row">
                 <div class="col-12">
                   <h4>
-                    <i class="">ID #</i> {{ $getRecord->id }}
+                    <i class="">ID #</i> {{ $getSingle->id }}
                    
                   </h4>
                 </div>
@@ -43,9 +43,9 @@
               <div class="row invoice-info">
                 <div class="col-sm-4 invoice-col">
                                     <address>
-                    <strong> Nome: </strong>{{ $getRecord->name }}<br>
-                    <strong> idade: </strong>{{ $getRecord->idade }}<br>
-                    <strong> telefone: </strong>{{ $getRecord->telefone }}<br>
+                    <strong> Nome: </strong>{{ $getSingle->name }}<br>
+                    <strong> idade: </strong>{{ $getSingle->idade }}<br>
+                    <strong> telefone: </strong>{{ $getSingle->telefone }}<br>
                     
                   </address>
                 </div>
@@ -53,8 +53,8 @@
                 <div class="col-sm-4 invoice-col">
                   
                   <address>
-                  <strong> Paroquia: </strong>{{ $getRecord->paroquia }}<br>
-                  <strong> endereco:< /strong>{{ $getRecord->endereco }}<br>
+                  <strong> Paroquia: </strong>{{ $getSingle->paroquia }}<br>
+                  <strong> endereco: </strong>{{ $getSingle->endereco }}<br>
                     
                   </address>
                 </div>
@@ -63,8 +63,8 @@
                   
                 </div>
                 <!-- /.col -->
-                <a href="{{ url('admin/membro/edit/'. $getRecord->id) }}" class="btn btn-primary">editar</a>
-                 <a href="{{ url('admin/admin/delete/'. $getRecord->id) }}" class="btn btn-danger">apagar</a>
+                <a href="{{ url('admin/membro/edit/'. $getSingle->id) }}" class="btn btn-primary">editar</a>
+                 <a href="{{ url('admin/membro/delete/'. $getSingle->id) }}" class="btn btn-danger">apagar</a>
               </div>
              
             </div>
@@ -81,39 +81,16 @@
           
           <!--/.col (left) -->
           <!-- right column -->
-          <div class="col-md-6">
-            <!-- Form Element sizes -->
-            <div class="card card-success">
-              <div class="card-header">
-                <h3 class="card-title">Dizimo</h3>
+          <div class="col-md">
+          
+              <a href="{{ url('admin/sancao/add/') }}" class="btn btn-primary"><i class="fas fa-lg fa-exclamation-circle fa-fw"></i>Sancionar</a>
               </div>
-              <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1"> Valor</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Valor do Dizimo">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Descrição</label>
-                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Descrição">
-                  </div>
-                  <div class="form-group">
-                    
-                  </div>
-                  <div class="form-check">
-                    
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success">Guardar</button>
-                </div>
-              </form>
-              </div>
-              <!-- /.card-body -->
-            </div>
-
+                 
+          
+          <div class="col-md">
+              
+          <a href="{{ url('admin/dizimo/add/') }}" class="btn btn-primary"><i class="fa fa-dollar" aria-hidden="true"></i>Dizimo</a>
+                
           </div>
           <!--/.col (right) -->
         </div>

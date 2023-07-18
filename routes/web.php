@@ -11,6 +11,7 @@ use App\Http\Controllers\MembroController;
 use App\Http\Controllers\SancaoController;
 use App\Http\Controllers\DizimoController;
 use App\Http\Controllers\OfertaController;
+use App\Http\Controllers\RelatorioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,9 @@ Route::group(['middleware' => 'admin'], function () {
     Route::post('admin/endereco/edit/{id}',  [EnderecoController::class, 'update']);
     Route::get('admin/endereco/delete/{id}',  [EnderecoController::class, 'delete']);
 
+    //relatorio
+    Route::get('admin/relatorio/relatorio',  [RelatorioController::class, 'gerarpdf']);
+
     // Rotas paroquia
     Route::get('admin/paroquia/lista',  [ParoquiaController::class, 'lista']);
     Route::get('admin/paroquia/add',  [ParoquiaController::class, 'add']);
@@ -98,6 +102,7 @@ Route::group(['middleware' => 'admin'], function () {
 
     //Rotas oferta
     Route::get('admin/oferta/lista',  [OfertaController::class, 'lista']);
+    Route::get('admin/oferta/index',  [OfertaController::class, 'graficoOfertasPorData']);
     Route::get('admin/oferta/add',  [OfertaController::class, 'add']);
     Route::post('admin/oferta/add',  [OfertaController::class, 'insert']);
     Route::get('admin/oferta/edit/{id}',  [OfertaController::class, 'edit']);
